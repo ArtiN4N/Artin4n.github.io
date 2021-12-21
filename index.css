@@ -1,0 +1,133 @@
+body {
+    background-color: #121212;
+
+    text-align: center;
+}
+
+p, h1, h2, h3, h4, h5, h6, label {
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #68D89B;
+}
+
+h6#timeLeft {
+    position: relative;
+
+    top: 261px;
+
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+div {
+    text-align: center;
+}
+
+div.dText {
+    position: relative;
+}
+
+h1#dateText {
+    font-size: 64px;
+    font-weight: bolder;
+}
+
+section {
+    position: absolute;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+section#title {
+    left: calc(50% - 258.5px);
+    top: 10px;
+}
+
+section#times {
+    left: calc(50% - 636px);
+    top: 90px;
+}
+
+section#thisDay {
+    left: calc(50% - 636px);
+    top: 124px;
+}
+
+section#nextDay {
+    right: 10px;
+    bottom: 10px;
+}
+
+button {
+    position: absolute;
+    padding: 0;
+    border: none;
+    
+    left: 486px;
+
+    background-color: #121212;
+
+    color: white;
+
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+}
+
+button#increase {
+    top: 2px;
+}
+
+button#decrease {
+    top: 32px;
+}
+
+div.thisDay {
+    position: absolute;
+    top: 0;
+
+    width: 150px;
+    height: 75px;
+
+    border: 2px solid white; 
+}
+
+div.nextDay {
+    width: 100px;
+    height: 50px;
+
+    margin: 3px;
+    
+    border: 1px solid white; 
+}
+
+div.timeText {
+    position: absolute;
+
+    width: 150px;
+
+    border: 2px solid transparent;
+}
+
+div#currentPeriod {
+    position: absolute;
+    top: 211px;
+}
