@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="reset.css" rel="stylesheet">
+        <link href="fonts.css" rel="stylesheet">
+        <link href="index.css" rel="stylesheet">
+    </head>
+    <body onload="init()">
+        <section id="title">
+            <h1 id="dateText">Today is: Day 1</h1>
+
+            <button id="increase" onclick="changeDay(1)">⌃</button>
+            <button id="decrease" onclick="changeDay(-1)">⌄</button>
+        </section>
+
+        <section id="times">
+            <div id="tt0" class="timeText"><h4 id="ttt0">8:15 - 9:30</h4></div>
+            <div id="tt1" class="timeText"><h4 id="ttt1">9:30 - 9:55</h4></div>
+            <div id="tt2" class="timeText"><h4 id="ttt2">9:55 - 10:35</h4></div>
+            <div id="tt3" class="timeText"><h4 id="ttt3">10:40 - 11:55</h4></div>
+            <div id="tt4" class="timeText"><h4 id="ttt4">11:55 - 12:45</h4></div>
+            <div id="tt5" class="timeText"><h4 id="ttt5">12:45 - 2:00</h4></div>
+            <div id="tt6" class="timeText"><h4 id="ttt6">2:05 - 2:45</h4></div>
+            <div id="tt7" class="timeText"><h4 id="ttt7">2:50 - 3:30</h4></div>
+        </section>
+
+        <section class="day" id="thisDay"></section>
+        <section class="day" id="nextDay"></section>
+
+        <div id="currentPeriod"><h5>🡑</h5></div>
+        <h6 id="timeLeft">🡑</h6>
+        <section id="inputss">
+            <label>Schedule:</label>
+            <input id="sInput" type="text">
+            <button style="position: unset; padding: revert; border: revert; left: revert; background-color: revert; color: revert; font-size: revert;" onclick="save()">Save</button>
+        </section>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src ="index.js"></script>
+        <script src ="dayCreator.js"></script>
+    </body>
+</html>
