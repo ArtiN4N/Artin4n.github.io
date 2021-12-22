@@ -35,8 +35,10 @@ function init() {
     let AHHAHAHAHAHAHA = document.cookie;
     let HAHAhwehhaeh = AHHAHAHAHAHAHA.split(";");
 
-    let heahshsahSHED = String(HAHAhwehhaeh[0]).substring(9, 66);
+    let heahshsahSHED = String(HAHAhwehhaeh[0]).slice(9);
     let hehehehRoms = String(HAHAhwehhaeh[1]).slice(7);
+
+    console.log(heahshsahSHED)
 
     let tryToAdd = JSON.parse(heahshsahSHED)
 
