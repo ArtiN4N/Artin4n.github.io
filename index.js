@@ -35,8 +35,8 @@ function init() {
     let AHHAHAHAHAHAHA = document.cookie;
     let HAHAhwehhaeh = AHHAHAHAHAHAHA.split(";");
 
-    let heahshsahSHED = String(HAHAhwehhaeh[0]).slice(9);
-    let hehehehRoms = String(HAHAhwehhaeh[1]).slice(7);
+    let heahshsahSHED = String(HAHAhwehhaeh[1]).slice(10);
+    let hehehehRoms = String(HAHAhwehhaeh[0]).slice(6);
 
     console.log(heahshsahSHED)
 
