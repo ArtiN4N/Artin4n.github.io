@@ -18,15 +18,13 @@ function save() {
     killmeagain = killme.split("🡑");
 
     let killmeshed = String(killmeagain[0]);
-    let killmerooms = String(killmeagain[1])
+    let killmerooms = String(killmeagain[1]);
+
 
     document.cookie = killmeshed;
     document.cookie = killmerooms;
-
-
-
-    schedule = JSON.parse(killmeshed.substring(9, 66));
-    rooms = JSON.parse(killmerooms.slice(0, -22).slice(6));
+    schedule = JSON.parse(killmeshed.substring(9).slice(0, -22));
+    rooms = JSON.parse(killmerooms.substring(6).slice(0, -22));
 }
 
 function init() {
@@ -35,17 +33,15 @@ function init() {
     let AHHAHAHAHAHAHA = document.cookie;
     let HAHAhwehhaeh = AHHAHAHAHAHAHA.split(";");
 
-    let heahshsahSHED = String(HAHAhwehhaeh[1]).slice(10);
-    let hehehehRoms = String(HAHAhwehhaeh[0]).slice(6);
+    let heahshsahSHED = String(HAHAhwehhaeh[0]).slice(9);
 
-    console.log(heahshsahSHED)
+    let hehehehRoms = String(HAHAhwehhaeh[1]).slice(7)
 
     let tryToAdd = JSON.parse(heahshsahSHED)
 
     if (tryToAdd !== "") {
         schedule = JSON.parse(heahshsahSHED);
 
-        console.log(hehehehRoms)
 
         rooms = JSON.parse(hehehehRoms);
     } else {
