@@ -1312,9 +1312,9 @@
 
         <script>
             function generate() {
-                const key = {"CAS": "0", "ENGLISH": "1", "CHEMISTRY": "2", "SPANISH": "3", "FRENCH": "4", "ART": "5", "MATH": "6", "ECONOMICS": "7", "PHYSICS": "8", "BIOLOGY": "9", "HISTORY": "10", "LUNCH": "11", "HOMEROOM": "12", "SPARE": "13", "TOK": "14", "WRITERS CRAFT": "15"};
+                const key = {"CAS": "0", "ENGLISH": "1", "CHEMISTRY": "2", "SPANISH": "3", "FRENCH": "4", "ART": "5", "MATH": "6", "ECONOMICS": "7", "PHYSICS": "8", "BIOLOGY": "9", "HISTORY": "A", "LUNCH": "B", "HOMEROOM": "C", "SPARE": "D", "TOK": "E", "WRITERS CRAFT": "F"};
 
-                
+                const endthisplease = {"0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "A": "10", "B": "11", "c": "12", "D": "13", "E": "14", "F": "15"};
                 let rooms = {0x0: [], 0x1: [], 0x2: [], 0x3: [], 0x4: [], 0x5: [], 0x6: [], 0x7: [], 0x8: [], 0x9: [], 0xA: [], 0xB: [], 0xC: [], 0xD: [], 0xE:[], 0xF: []}
                 let s = [[],[],[],[],[],[],[],[]]
                 for (let i = 1; i < 9; i++) {
@@ -1322,7 +1322,8 @@
                         
                         let val = $("#p" + String(i) + String(o)).val();
                         let hex = key[val];
-                        rooms[hex].push($("#room" + String(i) + String(o)).val())
+                        console.log(hex, endthisplease[hex])
+                        rooms[endthisplease[hex]].push($("#room" + String(i) + String(o)).val())
                         s[o-1].push(hex);
                     }
                 }
