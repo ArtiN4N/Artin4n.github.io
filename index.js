@@ -1,5 +1,5 @@
 //cas =0, eng = 1, chem = 2, esp = 3, frn = 4, art = 5, mth = 6, ecn = 7, phy = 8, bio = 9, his = A, lun = B, asm = C, spr = D, tok = E, wrc = F
-
+let rooms = {0x0: 232, 0x1: 233, 0x2: 137, 0x3: [204, null, 232, 238, 137, null, 238, null], 0x6: [137, 137, 133, 120, 238, 120, null, 120], 0x7: 232, 0x8: 120, 0xB: 133, 0xC: "HR", 0xD: "Commons", 0xE: [116, null, null, null, 232, null, 232, null], 0xF: [null, 233, 233, null, null, null, null, 137]};
 let schedule = {1: 0x7CE2B3D6, 2: 0x6C81BD2F, 3: 0x2C76B3FF, 4: 0x8C3DB166, 5: 0xDC63B72E, 6: 0xDCD8B611, 7: 0xEC07B238, 8: 0x1CF6B8D7};
 let times = [495, 570, 595, 635, 715, 765, 840, 885, 930];
 let combinedTimes = [495, 570, 595, 635, 715, 765, 840, 930];
@@ -15,13 +15,41 @@ let killme = "";
 
 function save() {
     killme = $("#sInput").val();
-    document.cookie = killme;
-    schedule = JSON.parse(document.cookie.substring(9, 122));
+    killmeagain = killme.split("🡑");
+
+    let killmeshed = String(killmeagain[0]);
+    let killmerooms = String(killmeagain[1])
+
+    document.cookie = killmeshed;
+    document.cookie = killmerooms;
+
+
+
+    schedule = JSON.parse(killmeshed.substring(9, 66));
+    rooms = JSON.parse(killmerooms.slice(0, -22).slice(6));
 }
 
 function init() {
-    $("#sInput").html(document.cookie);
-    schedule = JSON.parse(document.cookie.substring(9, 122));
+    
+
+    let AHHAHAHAHAHAHA = document.cookie;
+    let HAHAhwehhaeh = AHHAHAHAHAHAHA.split(";");
+
+    let heahshsahSHED = String(HAHAhwehhaeh[0]).substring(9, 66);
+    let hehehehRoms = String(HAHAhwehhaeh[1]).slice(7);
+
+    let tryToAdd = JSON.parse(heahshsahSHED)
+
+    if (tryToAdd !== "") {
+        schedule = JSON.parse(heahshsahSHED);
+
+        console.log(hehehehRoms)
+
+        rooms = JSON.parse(hehehehRoms);
+    } else {
+        schedule = {1: 0x7CE2B3D6, 2: 0x6C81BD2F, 3: 0x2C76B3FF, 4: 0x8C3DB166, 5: 0xDC63B72E, 6: 0xDCD8B611, 7: 0xEC07B238, 8: 0x1CF6B8D7};
+        rooms = {0x0: 232, 0x1: 233, 0x2: 137, 0x3: [204, null, 232, 238, 137, null, 238, null], 0x6: [137, 137, 133, 120, 238, 120, null, 120], 0x7: 232, 0x8: 120, 0xB: 133, 0xC: "HR", 0xD: "Commons", 0xE: [116, null, null, null, 232, null, 232, null], 0xF: [null, 233, 233, null, null, null, null, 137]};
+    }
 
     combinedPeriod = createDay(schedule, rooms, day, checkWednesday());
 
