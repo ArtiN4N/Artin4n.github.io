@@ -1,5 +1,5 @@
 const key = {0x0: "CAS", 0x1: "English", 0x2: "Chemistry", 0x3: "Spanish", 0x4: "French", 0x5: "Art", 0x6: "Math", 0x7: "Economics", 0x8: "Physics", 0x9: "Biology", 0xA: "History", 0xB: "Lunch", 0xC: "Homeroom", 0xD: "Spare", 0xE: "TOK", 0xF: "WC"}
-const rooms = {0x0: 232, 0x1: 233, 0x2: 137, 0x3: [204, null, 232, 238, 137, null, 238, null], 0x6: [137, 137, 133, 120, 238, 120, null, 120], 0x7: 232, 0x8: 120, 0xB: 133, 0xC: "HR", 0xD: "Commons", 0xE: [116, null, null, null, 232, null, 232, null], 0xF: [null, 233, 233, null, null, null, null, 137]};
+rooms = {0x0: 232, 0x1: 233, 0x2: 137, 0x3: [204, null, 232, 238, 137, null, 238, null], 0x6: [137, 137, 133, 120, 238, 120, null, 120], 0x7: 232, 0x8: 120, 0xB: 133, 0xC: "HR", 0xD: "Commons", 0xE: [116, null, null, null, 232, null, 232, null], 0xF: [null, 233, 233, null, null, null, null, 137]};
 
 function getHexDigit(hex, n) {
     let number = hex.toString(16);
