@@ -1321,17 +1321,32 @@
                 for (let i = 1; i < 9; i++) {
                     let hexes = [];
                     for (let o = 1; o < 9; o++) {
-                        let val = $("#p" + String(i) + String(o)).val();
+                        let val = $("#p" + String(o) + String(i)).val();
                         let hex = key[val];
-                        hexes.push(endthisplease[hex]);
-                        rooms[endthisplease[hex]].push($("#room" + String(i) + String(o)).val())
-                        s[o-1].push(hex);
+                        noAdd = false
+                        for (let p = 0; p < hexes.length; p++) {
+                            if (endthisplease[hex] === hexes[p]) {
+                                
+                                noAdd = true
+                            }
+                        }
+
+                        if (!noAdd) {
+                            console.log(val)
+                            hexes.push(endthisplease[hex]);
+                            rooms[endthisplease[hex]].push($("#room" + String(o) + String(i)).val())
+                        }
+                        s[i-1].push(hex);
                     }
                     let populate = []
+                    console.log(i, hexes)
+                    console.log("\n")
+
+
                     for (let p = 0; p < masterHexes.length; p++) {
                         populated = false;
                         for (let q = 0; q < hexes.length; q++) {
-                            if (q === p) {
+                            if (hexes[q] === masterHexes[p]) {
                                 populated = true
                             }
                         }
@@ -1339,11 +1354,14 @@
                             populate.push(masterHexes[p])
                         }
                     }
-                    for (let p = 0; p < populated.length; p++) {
-                        rooms[populated[p]].push("")
+
+                    
+                    for (let p = 0; p < populate.length; p++) {
+                        rooms[populate[p]].push(" ")
                     }
                 }
                 
+
                 let schedule = {1:Number("0X" + s[0].join("")),2:Number("0X" + s[1].join("")),3:Number("0X" + s[2].join("")),4:Number("0X" + s[3].join("")),5:Number("0X" + s[4].join("")),6:Number("0X" + s[5].join("")),7:Number("0X" + s[6].join("")),8:Number("0X" + s[7].join(""))}
                 let sText = JSON.stringify(schedule);
                 let final = "";
